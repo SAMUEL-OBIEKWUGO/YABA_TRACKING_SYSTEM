@@ -1,0 +1,156 @@
+.report-card--form,
+.report-card--side {
+  display: grid;
+  gap: 18px;
+}
+
+.incident-form,
+.auth-form {
+  display: grid;
+  gap: 18px;
+}
+
+.field-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+label {
+  display: grid;
+  gap: 8px;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 14px;
+  border: 1px solid rgba(16,38,64,0.08);
+  border-radius: 12px;
+  background: rgba(255,255,255,0.75);
+  color: var(--ink);
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+  padding-top: 12px;
+}
+
+.upload-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  border: 1px dashed rgba(45,115,255,0.26);
+  border-radius: 14px;
+  background: rgba(45,115,255,0.02);
+  color: var(--ink-soft);
+  font-weight: 700;
+}
+
+.upload-box button {
+  min-height: 38px;
+  padding: 0 12px;
+  border-radius: 10px;
+  background: rgba(45,115,255,0.08);
+  color: var(--blue);
+  font-weight: 800;
+}
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.form-actions.compact {
+  justify-content: flex-start;
+}
+
+.btn--ghost {
+  background: rgba(16,38,64,0.02);
+  border: 1px solid rgba(16,38,64,0.08);
+  color: var(--ink);
+}
+
+.check-list--stacked {
+  gap: 14px;
+}
+
+.response-box {
+  display: grid;
+  gap: 8px;
+  margin-top: 10px;
+  padding: 18px 16px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, rgba(27,184,116,0.08), rgba(255,255,255,0.8));
+  border: 1px solid rgba(27,184,116,0.12);
+}
+
+.response-box strong {
+  font-size: 1.1rem;
+  letter-spacing: -0.03em;
+}
+
+.response-box p {
+  color: var(--ink-soft);
+}
+
+.form-error {
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(237,90,90,0.08);
+  border: 1px solid rgba(237,90,90,0.12);
+  color: #c73f3f;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.empty-state {
+  padding: 18px;
+  border-radius: 12px;
+  background: rgba(16,38,64,0.02);
+  border: 1px dashed rgba(16,38,64,0.1);
+  color: var(--ink-soft);
+  font-weight: 700;
+}
+
+.success-banner {
+  display: grid;
+  gap: 18px;
+  padding: 28px;
+  border-radius: 28px;
+  border: 1px solid rgba(27,184,116,0.14);
+  background: linear-gradient(180deg, rgba(27,184,116,0.08), rgba(255,255,255,0.8));
+  box-shadow: 0 20px 40px rgba(17,39,64,0.06);
+}
+
+.success-banner h1 {
+  margin-top: 8px;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  letter-spacing: -0.06em;
+}
+
+.success-banner p {
+  color: var(--ink-soft);
+  line-height: 1.7;
+}
+
+.success-check {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(27,184,116,0.1);
+  color: #1a8d62;
+  font-size: 2rem;
+  font-weight: 900;
+}
