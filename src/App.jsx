@@ -11,6 +11,7 @@ import LoginPage from './pages/LoginPage'
 import DashboardPage from './pages/DashboardPage'
 import MapPage from './pages/MapPage'
 import ReportPage from './pages/ReportPage'
+import AccountPage from './pages/AccountPage'
 import { readReports, readSession, saveReports, saveSession } from './utils/storage'
 
 function App() {
@@ -46,6 +47,21 @@ function App() {
     })
   }
 
+  const handleLogout = () => {
+    setSession(null)
+  }
+
+  const handleUpdateUser = (userProfile) => {
+    setSession((current) => ({
+      ...(current || {}),
+      user: {
+        ...(current?.user || {}),
+        name: userProfile.name || current?.user?.name || 'Ada Okafor',
+        email: userProfile.email || current?.user?.email || 'resident@yabaware.com',
+      },
+    }))
+  }
+
   const handleSubmitReport = (report) => {
     setReports((current) => [report, ...current])
   }
@@ -53,13 +69,30 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<LandingPage />} />
-      <Route path="/login" element={<LoginPage user={session?.user} onLogin={handleLogin} />} />
+      <Route path="/login" element={<LoginPage user={session?.user} onLogin={handleLogin} onLogout={handleLogout} />} />
       <Route
         path="/dashboard"
-        element={<DashboardPage reports={reports} user={session?.user ?? { name: 'Ada Okafor' }} metrics={metrics} />}
+        element={
+          <DashboardPage
+            reports={reports}
+            user={session?.user ?? { name: 'Ada Okafor' }}
+            metrics={metrics}
+            onLogout={handleLogout}
+          />
+        }
       />
       <Route path="/map" element={<MapPage reports={reports} />} />
       <Route path="/report" element={<ReportPage onSubmitReport={handleSubmitReport} />} />
+      <Route
+        path="/account"
+        element={
+          <AccountPage
+            user={session?.user ?? { name: 'Ada Okafor', email: 'resident@yabaware.com' }}
+            onLogout={handleLogout}
+            onUpdateUser={handleUpdateUser}
+          />
+        }
+      />
       <Route path="*" element={<LandingPage />} />
     </Routes>
   )

@@ -40,6 +40,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  padding: env(safe-area-inset-top, 0) 0 env(safe-area-inset-bottom, 0);
   background:
     radial-gradient(circle at top, #f9fbff 0%, #edf4fb 32%, #eaf1f8 100%);
   color: var(--ink);
@@ -86,4 +87,53 @@ span {
 :focus-visible {
   outline: 3px solid rgba(35, 102, 255, 0.28);
   outline-offset: 2px;
+}
+
+@media (max-width: 991.98px) {
+  body {
+    background: linear-gradient(180deg, #f0f6ff 0%, #edf3f8 100%);
+  }
+
+  .container-fluid {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .main-header,
+  .map-header,
+  .report-header,
+  .content-header,
+  .panel-header,
+  .map-panel__header,
+  .site-footer {
+    flex-wrap: wrap;
+  }
+
+  .main-header,
+  .map-header,
+  .report-header,
+  .content-header {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .nav-buttons {
+    width: 100%;
+  }
+
+  .nav-buttons .btn {
+    width: 100%;
+  }
+
+  .main-nav {
+    width: 100%;
+    padding-top: 0.5rem;
+  }
+
+  .main-nav .nav-link {
+    width: 100%;
+    text-align: left;
+  }
 }

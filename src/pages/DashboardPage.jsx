@@ -6,7 +6,7 @@ import MapOverviewCard from '../components/dashboard/MapOverviewCard'
 import ResponseTeams from '../components/dashboard/ResponseTeams'
 import SafetyTrend from '../components/dashboard/SafetyTrend'
 
-function DashboardPage({ reports = [], user = { name: 'Ada Okafor' }, metrics }) {
+function DashboardPage({ reports = [], user = { name: 'Ada Okafor' }, metrics, onLogout }) {
   const [query, setQuery] = useState('')
 
   const visibleReports = useMemo(() => {
@@ -46,8 +46,8 @@ function DashboardPage({ reports = [], user = { name: 'Ada Okafor' }, metrics })
   ]
 
   return (
-    <div className="app-shell">
-      <SidebarNav />
+    <div className="app-shell container-fluid px-3 px-md-4">
+      <SidebarNav onLogout={onLogout} />
 
       <main className="content-area">
         <header className="content-header">
@@ -65,7 +65,9 @@ function DashboardPage({ reports = [], user = { name: 'Ada Okafor' }, metrics })
               onChange={(event) => setQuery(event.target.value)}
               aria-label="Search incidents"
             />
-            <div className="profile-pill">{(user?.name || 'AD').slice(0, 2).toUpperCase()}</div>
+            <Link to="/account" className="profile-pill" aria-label="Open account settings">
+              {(user?.name || 'AD').slice(0, 2).toUpperCase()}
+            </Link>
           </div>
         </header>
 

@@ -36,7 +36,7 @@ function MapPage({ reports = [] }) {
   const selectedReport = filteredReports.find((report) => report.id === selectedId) || filteredReports[0]
 
   return (
-    <div className="map-page-shell">
+    <div className="map-page-shell container-fluid px-3 px-md-4">
       <header className="map-header">
         <div className="brand">
           <div className="brand__mark">Y</div>

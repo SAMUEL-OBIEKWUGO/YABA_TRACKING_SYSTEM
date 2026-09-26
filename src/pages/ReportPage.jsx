@@ -83,7 +83,7 @@ function ReportPage({ onSubmitReport }) {
   }
 
   return (
-    <div className="report-page-shell">
+    <div className="report-page-shell container-fluid px-3 px-md-4">
       <header className="report-header">
         <div className="brand">
           <div className="brand__mark">Y</div>

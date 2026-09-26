@@ -13,15 +13,15 @@ const stats = [
 
 function LandingPage() {
   return (
-    <div className="professional-shell">
+    <div className="professional-shell container-fluid px-3 px-md-4">
       <TopNav />
 
-      <main className="landing-main">
+      <main className="landing-main container-fluid px-0">
         <HeroSection />
 
-        <section className="stats-row" aria-label="Key platform metrics">
+        <section className="stats-row row g-3 gx-lg-4" aria-label="Key platform metrics">
           {stats.map((stat) => (
-            <article key={stat.label} className="stat-card">
+            <article key={stat.label} className="stat-card col-12 col-md-4">
               <strong>{stat.value}</strong>
               <span>{stat.label}</span>
             </article>

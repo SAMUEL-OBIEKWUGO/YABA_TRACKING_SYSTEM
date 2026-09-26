@@ -11,6 +11,38 @@
   box-shadow: 0 18px 38px rgba(16, 38, 64, 0.06);
 }
 
+.main-header .container-fluid {
+  width: 100%;
+}
+
+.navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-right: 1rem;
+}
+
+.brand-copy {
+  display: inline-flex;
+  align-items: center;
+}
+
+.navbar-toggler {
+  padding: 0.35rem 0.55rem;
+  border-radius: 10px;
+}
+
+.navbar-toggler-icon {
+  display: inline-block;
+  width: 1.4rem;
+  height: 1.4rem;
+  vertical-align: middle;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(16,38,64,1)' stroke-linecap='round' stroke-width='2.5' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+
 .brand {
   display: flex;
   align-items: center;
@@ -106,6 +138,179 @@
   margin: 28px auto 40px;
 }
 
+@media (max-width: 991.98px) {
+  .professional-shell {
+    width: min(100%, calc(100% - 16px));
+    margin-top: 18px;
+  }
+
+  .main-header {
+    padding: 14px 16px;
+  }
+
+  .main-nav {
+    width: 100%;
+    padding-top: 0.75rem;
+  }
+
+  .main-nav .nav-link {
+    width: 100%;
+    padding: 0.7rem 0.8rem;
+    border-radius: 10px;
+  }
+
+  .nav-buttons {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .nav-buttons .btn {
+    width: 100%;
+  }
+
+  .hero-section {
+    grid-template-columns: 1fr;
+    padding: 38px 20px 24px;
+  }
+
+  .hero-copy {
+    padding-left: 0;
+  }
+
+  .hero-copy h1 {
+    max-width: 100%;
+  }
+
+  .hero-visual {
+    min-height: 320px;
+  }
+
+  .stats-row,
+  .steps-grid,
+  .feature-grid,
+  .spotlight-section {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .professional-shell {
+    width: min(100%, calc(100% - 10px));
+    margin-top: 10px;
+  }
+
+  .main-header {
+    padding: 14px 14px;
+    border-radius: 18px;
+  }
+
+  .brand-mark {
+    width: 34px;
+    height: 34px;
+    font-size: 1rem;
+  }
+
+  .brand-name {
+    font-size: 1.35rem;
+  }
+
+  .navbar-collapse {
+    margin-top: 0.5rem;
+  }
+
+  .main-nav {
+    align-items: stretch;
+    gap: 0.35rem;
+  }
+
+  .hero-section {
+    border-radius: 22px;
+    padding: 26px 16px 18px;
+    gap: 22px;
+  }
+
+  .hero-copy h1 {
+    font-size: clamp(2.3rem, 12vw, 3.2rem);
+    line-height: 1.02;
+    letter-spacing: -0.05em;
+  }
+
+  .hero-copy p {
+    font-size: 1rem;
+    margin-top: 14px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+  }
+
+  .hero-actions .btn,
+  .nav-buttons .btn,
+  .footer-links a {
+    width: 100%;
+    min-height: 46px;
+  }
+
+  .nav-buttons {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .social-proof {
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+
+  .stats-row,
+  .steps-grid,
+  .feature-grid,
+  .spotlight-section,
+  .field-grid,
+  .dashboard-grid,
+  .bottom-grid,
+  .map-content,
+  .report-content,
+  .auth-shell,
+  .auth-row,
+  .social-actions {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+
+  .stat-card,
+  .step-card,
+  .feature-card,
+  .mini-stat,
+  .panel,
+  .report-card,
+  .map-panel,
+  .auth-card {
+    min-width: 0;
+    border-radius: 18px;
+  }
+
+  .site-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 18px;
+  }
+
+  .footer-links {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .section-header h2,
+  .spotlight-copy h2 {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+  }
+}
+
 .landing-main {
   display: grid;
   gap: 0;
@@ -146,7 +351,7 @@
 .hero-copy h1 {
   margin-top: 18px;
   max-width: 620px;
-  font-size: clamp(3rem, 4vw, 5rem);
+  font-size: clamp(2.5rem, 4vw, 5rem);
   line-height: 0.96;
   letter-spacing: -0.07em;
 }
@@ -155,7 +360,7 @@
   margin-top: 20px;
   max-width: 560px;
   color: rgba(255, 255, 255, 0.75);
-  font-size: 1.1rem;
+  font-size: clamp(0.98rem, 1.3vw, 1.12rem);
   line-height: 1.7;
 }
 

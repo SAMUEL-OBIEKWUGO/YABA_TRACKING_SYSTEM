@@ -7,7 +7,7 @@ const initialState = {
   password: 'password123',
 }
 
-function LoginPage({ user, onLogin }) {
+function LoginPage({ user, onLogin, onLogout }) {
   const navigate = useNavigate()
   const [mode, setMode] = useState('login')
   const [form, setForm] = useState(initialState)
@@ -37,13 +37,35 @@ function LoginPage({ user, onLogin }) {
           <span className="eyebrow">You are signed in</span>
           <h2>Welcome back, {user.name.split(' ')[0]}.</h2>
           <p>Continue to your resident dashboard or create a new safety report.</p>
-          <div className="form-actions compact">
+          <div className="form-actions compact flex-wrap">
             <button type="button" className="btn btn--primary" onClick={() => navigate('/dashboard')}>
               Go to dashboard
             </button>
             <Link className="btn btn--secondary" to="/report">
               Report issue
             </Link>
+            <button
+              type="button"
+              className="btn btn--ghost"
+              onClick={() => {
+                onLogout?.()
+                setMode('login')
+                setForm(initialState)
+              }}
+            >
+              Log out
+            </button>
+            <button
+              type="button"
+              className="btn btn--secondary"
+              onClick={() => {
+                onLogout?.()
+                setMode('login')
+                setForm(initialState)
+              }}
+            >
+              Sign in as another person
+            </button>
           </div>
         </div>
       </div>
@@ -51,8 +73,8 @@ function LoginPage({ user, onLogin }) {
   }
 
   return (
-    <div className="auth-shell">
-      <div className="auth-hero">
+    <div className="auth-shell row g-0">
+      <div className="auth-hero col-12 col-lg-6">
         <div className="auth-hero__content">
           <span className="eyebrow eyebrow--light">Community-first safety</span>
           <h1>Keep your street informed and protected.</h1>
@@ -69,7 +91,7 @@ function LoginPage({ user, onLogin }) {
         </div>
       </div>
 
-      <div className="auth-card-wrap">
+      <div className="auth-card-wrap col-12 col-lg-6">
         <div className="auth-card">
           <div className="auth-card__header">
             <span className="eyebrow">{mode === 'login' ? 'Welcome back' : 'Create account'}</span>

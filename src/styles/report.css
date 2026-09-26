@@ -16,6 +16,36 @@
   gap: 16px;
 }
 
+@media (max-width: 575.98px) {
+  .field-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .report-card,
+  .map-panel {
+    padding: 18px 16px;
+  }
+
+  .form-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .form-actions .btn,
+  .upload-box {
+    width: 100%;
+  }
+
+  .upload-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .success-banner {
+    padding: 20px 16px;
+  }
+}
+
 label {
   display: grid;
   gap: 8px;

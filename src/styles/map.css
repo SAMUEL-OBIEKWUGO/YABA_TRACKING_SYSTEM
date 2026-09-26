@@ -4,6 +4,67 @@
   margin: 28px auto 40px;
 }
 
+@media (max-width: 991.98px) {
+  .map-content,
+  .report-content {
+    grid-template-columns: 1fr;
+  }
+
+  .map-header,
+  .report-header,
+  .map-panel__header,
+  .panel-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .map-header__controls,
+  .report-header__actions {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .map-header__controls,
+  .report-header__actions,
+  .map-header,
+  .report-header,
+  .map-page-shell,
+  .report-page-shell {
+    width: 100%;
+  }
+
+  .map-header__controls,
+  .report-header__actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .map-header__controls .btn,
+  .report-header__actions .btn,
+  .map-header__controls .search-pill {
+    width: 100%;
+  }
+
+  .map-canvas {
+    height: 360px;
+  }
+
+  .alert-item {
+    align-items: flex-start;
+  }
+
+  .severity {
+    min-width: 52px;
+  }
+
+  .map-detail {
+    padding: 14px 12px;
+  }
+}
+
 .map-header,
 .report-header {
   display: flex;
